@@ -5,14 +5,20 @@ import "./articles.css"
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
-
+    const [isLoading, setIsLoading] = useState(false)
     useEffect(()=>{
+        setIsLoading(true)
         getArticles().then((articles)=> {
             setArticles(articles)
-        })
+        }).then(()=>setIsLoading(false))
     }, [])
+    
+    {if (isLoading===true){
+        return <p>Loading, please wait</p>
+    }}
     return (
     <>
+
     <h2>Articles:</h2>
     <div className="articleGrid">
         {articles.map((article)=>{
