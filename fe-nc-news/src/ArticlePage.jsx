@@ -3,21 +3,29 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import getArticle from './utils/GetArticle'; 
 import './articlePage.css'
+import getComments from './utils/GetComments'
 
 const ArticlePage = () => {
   const { article_id } = useParams(); 
   const [article, setArticle] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [comments, setComments] = useState([])
 
   useEffect(() => {
     setIsLoading(true);
     
     getArticle(article_id).then((articleData) => {
       setArticle(articleData);
-      console.log(article)
       setIsLoading(false);
     });
   }, [article_id]);
+
+useEffect(()=>{
+    getComments(article_id).then((commentData)=>{
+        setComments(commentData)
+    })
+}, [article_id])
+
 
   if (isLoading) {
     return <p>Loading article, please wait...</p>;
@@ -35,6 +43,21 @@ const ArticlePage = () => {
       </ul>
       
       <p>{article.body}</p>
+    <h3>Comments</h3>
+    <div className="commentGrid">
+    {comments.map((comment)=>{
+        return (
+            <div className="commentCard" key={comment.comment_id}>
+                <p>{comment.body}</p>
+                <div className="authorVotes">
+                <p>Author: {comment.author}</p>
+                <p>Votes: {comment.votes}</p>
+                </div>
+            </div>
+        )
+    })}
+
+    </div>
     </div>
   );
 };

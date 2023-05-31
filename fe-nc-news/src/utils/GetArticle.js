@@ -1,7 +1,8 @@
-import axios from 'axios'
+import axios from "axios";
 
 const getArticle = (article_id) => {
-  return axios.get(`https://jd-nc-news.onrender.com/api/articles/${article_id}`)
+  return axios
+    .get(`https://jd-nc-news.onrender.com/api/articles/${article_id}`)
     .then((response) => {
       return response.data.article;
     })
