@@ -1,9 +1,11 @@
 .underPic {
-    background-color: rgb(40, 47, 56); 
+    background-color: rgb(223, 218, 71); 
+    color: black;
   list-style-type: none;
   text-align: center;
   margin: 0;
   padding: 0;
+  border-radius: 10px;
 }
 
 .underPic li {
@@ -13,7 +15,9 @@
 }
 
 .authorVotes{
-  background-color: rgb(40, 47, 56); 
+  background-color: rgb(223, 218, 71); 
+  color: black;
+  border-radius: 10px;
   list-style-type: none;
   text-align: center;
   margin: 0;
