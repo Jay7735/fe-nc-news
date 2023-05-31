@@ -12,7 +12,9 @@ return (
 <>
 <h3>Comments</h3>
     <div className="commentGrid">
-    {comments.map((comment)=>{
+    {comments.length > 0 ?(
+    
+    comments.map((comment)=>{
         return (
             <div className="commentCard" key={comment.comment_id}>
                 <p>{comment.body}</p>
@@ -22,7 +24,9 @@ return (
                 </div>
             </div>
         )
-    })}
+    })): (
+        <p>There are no comments for this article yet.</p>
+    )}
 </div>
 </>
 )
