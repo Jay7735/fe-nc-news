@@ -2,6 +2,9 @@ import getArticles from "./utils/Articles";
 import React from 'react'
 import {useState, useEffect} from 'react'
 import "./articles.css"
+import { Link } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import ArticlePage from "./ArticlePage";
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
@@ -29,7 +32,10 @@ const Articles = () => {
                     <h3>{article.title}</h3>
                     <p>Author: {article.author}</p>
                     <p>Comment Count: {article.comment_count}</p>
-                    <button className="button">Click to read more!</button>
+                    <div className="navigateAway">
+                    <Link to={`/articles/${article.article_id}`}>Click to read more!</Link>
+                    </div>
+                    
                     </div>
 
 

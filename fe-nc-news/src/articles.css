@@ -31,3 +31,9 @@
     display: block;
     }
 
+.naviagateAway {
+    position: absolute;
+    bottom: 0;
+    }
+
+    /* //position abosloute position relative for link placement set bottom to zero  */

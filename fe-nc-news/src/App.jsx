@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Articles from './Articles'
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import ArticlePage from './ArticlePage'
 
 
 
@@ -25,6 +26,7 @@ function App() {
         
         <Routes>
           <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:article_id" element={<ArticlePage />} />
         </Routes>
         </BrowserRouter>
     </>
@@ -32,3 +34,7 @@ function App() {
 }
 
 export default App
+
+//use params
+//parametric endpoint
+
