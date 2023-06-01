@@ -30,5 +30,15 @@ export const patchVotes = (article_id, upDownVote) => {
   return axios.patch(`https://jd-nc-news.onrender.com/api/articles/${article_id}`, { inc_votes : upDownVote}).then((response)=>{
   
   return response.data.updated
-  })
+  }).catch(error => {
+    if (error.message === 'Network Error') {
+      alert("You are currently offline and are unable to vote at the moment. Please try again soon.");
+    }
+})
+}
+
+export const postComment = (formData, article_id) => {
+  return axios.post(`https://jd-nc-news.onrender.com/api/articles/${article_id}/comments`, formData).then((response)=>{
+    return response.data.comments[0]
+  }).catch((err)=> console.log(err))
 }

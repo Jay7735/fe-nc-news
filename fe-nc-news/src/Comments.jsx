@@ -1,5 +1,7 @@
 import {getComments} from './utils/ApiFunctions'
 import {React, useState, useEffect} from 'react'
+import AddComment from './AddComment'
+import "./styles/articles.css"
 
 const Comments = ({article_id}) => {
  const [comments, setComments] = useState([])
@@ -16,6 +18,7 @@ const Comments = ({article_id}) => {
 return (
 <>
 <h3>Comments</h3>
+<AddComment article_id={article_id} />
     <div className="commentGrid">
     {comments.length > 0 ?(
     
