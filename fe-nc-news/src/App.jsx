@@ -1,16 +1,9 @@
-import { useState } from 'react'
-
-import './App.css'
+import './styles/App.css'
 import Articles from './Articles'
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import ArticlePage from './ArticlePage'
 
-
-
-
 function App() {
-  
-
   return (
     <>
       <h1>NC News</h1>
@@ -34,7 +27,3 @@ function App() {
 }
 
 export default App
-
-//use params
-//parametric endpoint
-

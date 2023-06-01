@@ -1,10 +1,8 @@
 import getArticles from "./utils/Articles";
 import React from 'react'
 import {useState, useEffect} from 'react'
-import "./articles.css"
+import "./styles/articles.css"
 import { Link } from 'react-router-dom';
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import ArticlePage from "./ArticlePage";
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
@@ -21,7 +19,6 @@ const Articles = () => {
     }}
     return (
     <>
-
     <h2>Articles:</h2>
     <div className="articleGrid">
         {articles.map((article)=>{
@@ -34,11 +31,8 @@ const Articles = () => {
                     <p>Comment Count: {article.comment_count}</p>
                     <div className="navigateAway">
                     <Link to={`/articles/${article.article_id}`}>Click to read more!</Link>
+                    </div> 
                     </div>
-                    
-                    </div>
-
-
                 </div>
             )
         })}

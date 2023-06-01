@@ -2,7 +2,8 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import getArticle from './utils/GetArticle'; 
-import './articlePage.css'
+import './styles/articlePage.css'
+import Comments from './Comments.jsx'
 
 const ArticlePage = () => {
   const { article_id } = useParams(); 
@@ -14,7 +15,6 @@ const ArticlePage = () => {
     
     getArticle(article_id).then((articleData) => {
       setArticle(articleData);
-      console.log(article)
       setIsLoading(false);
     });
   }, [article_id]);
@@ -31,13 +31,11 @@ const ArticlePage = () => {
       <li>Author: {article.author}</li>
       <li>Topics: {article.topic}</li>
       <li>Votes: {article.votes}</li>
-
       </ul>
-      
       <p>{article.body}</p>
+    <Comments article_id={article_id} />
     </div>
   );
 };
-
 
 export default ArticlePage;
