@@ -28,7 +28,7 @@ export const getComments = (article_id) => {
 
 export const patchVotes = (article_id, upDownVote) => {
   return axios.patch(`https://jd-nc-news.onrender.com/api/articles/${article_id}`, { inc_votes : upDownVote}).then((response)=>{
-  console.log(response.data.updated.votes)  
+  
   return response.data.updated
   })
 }
