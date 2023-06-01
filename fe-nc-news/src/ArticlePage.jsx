@@ -1,9 +1,10 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import getArticle from './utils/GetArticle'; 
+import {getArticle} from './utils/ApiFunctions'; 
 import './styles/articlePage.css'
 import Comments from './Comments.jsx'
+import Votes from './Votes.jsx'
 
 const ArticlePage = () => {
   const { article_id } = useParams(); 
@@ -30,7 +31,8 @@ const ArticlePage = () => {
       <ul className="underPic">
       <li>Author: {article.author}</li>
       <li>Topics: {article.topic}</li>
-      <li>Votes: {article.votes}</li>
+      
+      <Votes article_id={article_id} votes={article.votes} />
       </ul>
       <p>{article.body}</p>
     <Comments article_id={article_id} />

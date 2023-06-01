@@ -1,13 +1,18 @@
-import getComments from './utils/GetComments'
+import {getComments} from './utils/ApiFunctions'
 import {React, useState, useEffect} from 'react'
 
 const Comments = ({article_id}) => {
  const [comments, setComments] = useState([])
+ const [isLoading, setIsLoading] = useState(false)
  useEffect(()=>{
+    setIsLoading(true)
     getComments(article_id).then((commentData)=>{
         setComments(commentData)
-    })
+    }).then(()=>setIsLoading(false))
     }, [article_id])
+    {if (isLoading===true){
+        return <p>Comments loading, please wait...</p>
+    }}
 return (
 <>
 <h3>Comments</h3>
