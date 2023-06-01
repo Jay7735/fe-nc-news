@@ -1,4 +1,4 @@
-import getArticles from "./utils/Articles";
+import {getArticles} from "./utils/ApiFunctions";
 import React from 'react'
 import {useState, useEffect} from 'react'
 import "./styles/articles.css"
