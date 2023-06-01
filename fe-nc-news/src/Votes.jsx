@@ -6,14 +6,19 @@ const Votes = ({article_id, votes}) => {
 
 function upVote() {
     setUserVote(userVote + 1)
-patchVotes(article_id, 1)
-   
+patchVotes(article_id, 1).catch(error => {
+    if (error.message === 'Network Error') {
+      alert("You are currently offline and are unable to vote at the moment. Please try again soon.");
+    }
+})
 }
 
 function downVote() {
     setUserVote(userVote - 1)
-patchVotes(article_id, -1)
-
+patchVotes(article_id, -1).catch(error => {
+    if (error.message === 'Network Error') {
+      alert("You are currently offline and are unable to vote at the moment. Please try again soon.");
+}})
 }
     return (
     <>
