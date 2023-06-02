@@ -4,7 +4,7 @@ import "./styles/articles.css"
 
 const AddComment = ({article_id}) => {
 const [formData, setFormData] = useState({})
-const [commentAuthor, setCommentAuthor] = useState("")
+const [commentAuthor, setCommentAuthor] = useState("jessjelly")
 const [commentBody, setCommentBody] = useState("")
 const [returnComment, setReturnComment] = useState ()
 const [isLoading, setIsLoading] = useState(false)
@@ -36,8 +36,8 @@ const handleSubmit = (event) => {
 return (
     <>
     <form onSubmit={handleSubmit}>
-        <label>Your name:
-            <input type="text" value={commentAuthor} onChange={(event)=> setCommentAuthor(event.target.value)} required />
+        <label>Username: {commentAuthor}{' '}
+            {/* <input type="text" value={commentAuthor} onChange={(event)=> setCommentAuthor(event.target.value)} required /> */}
         </label>
         <label>Your comment:
             <input type="text" value={commentBody} onChange={(event)=> setCommentBody(event.target.value)} required />
