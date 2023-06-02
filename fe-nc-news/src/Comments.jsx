@@ -18,7 +18,7 @@ const Comments = ({article_id}) => {
 return (
 <>
 <h3>Comments</h3>
-<AddComment article_id={article_id} />
+<AddComment article_id={article_id} setComments={setComments} />
     <div className="commentGrid">
     {comments.length > 0 ?(
     

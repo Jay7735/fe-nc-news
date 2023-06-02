@@ -2,11 +2,10 @@ import {React, useState, useEffect} from 'react'
 import { postComment } from "./utils/ApiFunctions";
 import "./styles/articles.css"
 
-const AddComment = ({article_id}) => {
+const AddComment = ({article_id, setComments}) => {
 const [formData, setFormData] = useState({})
 const [commentAuthor, setCommentAuthor] = useState("jessjelly")
 const [commentBody, setCommentBody] = useState("")
-const [returnComment, setReturnComment] = useState ()
 const [isLoading, setIsLoading] = useState(false)
 
 useEffect(()=>{
@@ -17,13 +16,13 @@ useEffect(()=>{
     })
 }, [commentAuthor, commentBody])
 
-
 const handleSubmit = (event) => {
     setIsLoading(true)
     event.preventDefault()
     postComment(formData, article_id).then((response)=>{
-        setReturnComment(response)
-        // setCommentAuthor("")
+        setComments((currComments)=>{
+            return [response, ...currComments]
+        })
         setCommentBody("")
         setFormData({})
     }).then(()=>setIsLoading(false))
@@ -37,26 +36,14 @@ return (
     <>
     <form onSubmit={handleSubmit}>
         <label>Username: {commentAuthor}{' '}
-            {/* <input type="text" value={commentAuthor} onChange={(event)=> setCommentAuthor(event.target.value)} required /> */}
         </label>
         <label>Your comment:
             <input type="text" value={commentBody} onChange={(event)=> setCommentBody(event.target.value)} required />
         </label>
-        <input type="submit" value="Submit"/>
-    </form>
-    {returnComment ? (
-<div className="newComment">
-    <p>{returnComment.body}</p>
-                <div className="authorVotes">
-                <p>Author: {returnComment.author}</p>
-                <p>Votes: {returnComment.votes}</p>
-                </div>
-                </div>
-    ) : null }
+        <button>Submit</button>
+    </form>   
     </>
 )
-
 }
-
 
 export default AddComment
