@@ -2,6 +2,7 @@ import './styles/App.css'
 import Articles from './Articles'
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import ArticlePage from './ArticlePage'
+import TopicArticles from './TopicArticles'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:article_id" element={<ArticlePage />} />
+          <Route path="/:topic/articles" element={<TopicArticles />}/>
         </Routes>
         </BrowserRouter>
     </>

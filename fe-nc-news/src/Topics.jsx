@@ -1,27 +1,28 @@
 import { getTopics, getArticlesByTopic } from "./utils/ApiFunctions";
 import {React, useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 const Topics = () => {
-    const [topicList, setTopicList] = useState([])
-    const [topic, setTopic] = useState("")
-    const [articles, setArticles] = useState([])
+    const [topics, setTopics] = useState([])
+    
+    
 
     useEffect(()=>{
         getTopics().then((response)=>{
-            setTopicList(articles)
+            setTopics(response)
         })
     }, [])
 
-useEffect(()=>{
-    getArticlesByTopic(topic).then(({articles})=>{
-        setArticles(articles)
-
-    })
-}, [topic])
-
 return (
     <>
-    
+    {topics.map((topic)=>{
+        return (
+            <Link to={`/${topic.slug}/articles`} key={topic.slug}>
+            <button>{topic.slug}</button>
+            </Link>
+        )
+    })}
+
     </>
 )
 
@@ -29,3 +30,4 @@ return (
 }
 
 export default Topics;
+
