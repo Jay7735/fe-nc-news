@@ -23,7 +23,7 @@ const handleSubmit = (event) => {
     event.preventDefault()
     postComment(formData, article_id).then((response)=>{
         setReturnComment(response)
-        setCommentAuthor("")
+        // setCommentAuthor("")
         setCommentBody("")
         setFormData({})
     }).then(()=>setIsLoading(false))
