@@ -3,6 +3,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import "./styles/articles.css"
 import { Link } from 'react-router-dom';
+import Topics from './Topics.jsx'
 
 const Articles = () => {
     const [articles, setArticles] = useState([])

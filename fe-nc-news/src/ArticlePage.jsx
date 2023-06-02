@@ -6,6 +6,7 @@ import './styles/articlePage.css'
 import Comments from './Comments.jsx'
 import Votes from './Votes.jsx'
 
+
 const ArticlePage = () => {
   const { article_id } = useParams(); 
   const [article, setArticle] = useState("");

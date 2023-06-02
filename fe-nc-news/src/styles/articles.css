@@ -7,6 +7,7 @@
     }
 
 .articleCard {
+    position: relative;
     background-color: white;
     height: auto;
     width: 100%;
@@ -31,9 +32,15 @@
     display: block;
     }
 
-.naviagateAway {
+.navigateAway {
     position: absolute;
     bottom: 0;
     }
 
+.newComment {
+    background-color: rgb(244, 114, 62);
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
     /* //position abosloute position relative for link placement set bottom to zero  */
