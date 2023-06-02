@@ -59,16 +59,14 @@ export const getTopics = () => {
   return axios
     .get(`https://jd-nc-news.onrender.com/api/topics`)
     .then((response) => {
-      console.log(response, 'getTopics request response')
-      return response
+      return response.data.topics
     }).catch((err) => console.log(err));
 };
 
 export const getArticlesByTopic = (topic) => {
   return axios
-    .get(`https://jd-nc-news.onrender.com/api/articles?topic=${topic}`)
+    .get(`https://jd-nc-news.onrender.com/api/${topic}/articles`)
     .then((response) => {
-      console.log(response.body.topics, 'articleByTopic request response')
-      return response.body.topics
+    return response.data.articles
     }).catch((err) => console.log(err));
 };

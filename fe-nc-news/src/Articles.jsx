@@ -20,6 +20,7 @@ const Articles = () => {
     }}
     return (
     <>
+   <Topics />
     <h2>Articles:</h2>
     <div className="articleGrid">
         {articles.map((article)=>{
