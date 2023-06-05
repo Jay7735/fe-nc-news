@@ -1,6 +1,9 @@
-import { getTopics, getArticlesByTopic } from "./utils/ApiFunctions";
+import { getTopics } from "./utils/ApiFunctions";
 import {React, useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import ButtonGroup from '@mui/material/ButtonGroup'
+import Button from '@mui/material/Button'
+import Article from '@mui/icons-material/Article'
 
 const Topics = () => {
     const [topics, setTopics] = useState([])
@@ -14,16 +17,16 @@ const Topics = () => {
     }, [])
 
 return (
-    <>
+    <ButtonGroup variant="outlined\q">
     {topics.map((topic)=>{
         return (
             <Link to={`/${topic.slug}/articles`} key={topic.slug}>
-            <button>{topic.slug}</button>
+            <Button endIcon={<Article/>}>{topic.slug}</Button>
             </Link>
         )
     })}
+    </ButtonGroup>
 
-    </>
 )
 
 

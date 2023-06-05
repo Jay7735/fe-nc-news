@@ -3,10 +3,13 @@ import Articles from './Articles'
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import ArticlePage from './ArticlePage'
 import TopicArticles from './TopicArticles'
+import Button from '@mui/material/Button'
+import Newspaper from '@mui/icons-material/Newspaper'
 
 function App() {
   return (
     <>
+    <div className="custom-cursor">
       <h1>NC News</h1>
       <p className="read-the-docs">
         The only social news website you will need.
@@ -14,7 +17,12 @@ function App() {
       <BrowserRouter>
       <div className="buttonZone">
           <Link to='/articles'>
-            <button className="button-45">Articles</button>
+            <Button
+            endIcon={<Newspaper/>}
+            size='medium'
+            variant="contained"
+            color='secondary'
+             >Articles</Button>
           </Link>
         </div>
         
@@ -24,6 +32,7 @@ function App() {
           <Route path="/:topic/articles" element={<TopicArticles />}/>
         </Routes>
         </BrowserRouter>
+        </div>
     </>
   )
 }
