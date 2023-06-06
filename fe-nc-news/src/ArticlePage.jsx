@@ -23,7 +23,8 @@ const ArticlePage = () => {
   }, [article_id]);
 
   if (isLoading) {
-    return (<><p>Loading article, please wait...</p><LinearProgress/></>);
+    return (<><p>Loading article, please wait...</p>
+    <LinearProgress/></>);
   }
 
   return (

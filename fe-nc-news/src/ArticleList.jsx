@@ -1,9 +1,11 @@
 import Button from '@mui/material/Button'
 import ReadMore from '@mui/icons-material/ReadMore'
+import React from 'react'
 
-
-
-<div className="articleGrid">
+const ArticleList = ({articles}) => {
+return (
+    <>
+    <div className="articleGrid">
         {articles.map((article)=>{
             return(
                 <div className="articleCard" key={article.article_id}>
@@ -14,10 +16,16 @@ import ReadMore from '@mui/icons-material/ReadMore'
                     <p>Comment Count: {article.comment_count}</p>
                     <div className="navigateAway">
                         <Button href={`/articles/${article.article_id}`} variant="contained" endIcon={<ReadMore/>} color="secondary">Read more</Button>
-                    {/* <Link to={`/articles/${article.article_id}`}>Click to read more!</Link> */}
                     </div> 
                     </div>
                 </div>
             )
         })}
     </div>
+
+    </>
+)
+}
+
+export default ArticleList
+

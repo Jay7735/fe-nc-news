@@ -8,8 +8,6 @@ import Article from '@mui/icons-material/Article'
 const Topics = () => {
     const [topics, setTopics] = useState([])
     
-    
-
     useEffect(()=>{
         getTopics().then((response)=>{
             setTopics(response)
