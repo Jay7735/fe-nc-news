@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react'
 import { postComment } from "./utils/ApiFunctions";
 import "./styles/articles.css"
+import CircularProgress from '@mui/material/CircularProgress'
 
 const AddComment = ({article_id, setComments}) => {
 const [formData, setFormData] = useState({})
@@ -29,7 +30,7 @@ const handleSubmit = (event) => {
 }
 
 {if (isLoading===true){
-    return <p>Patience please, your comment is being added...</p>
+    return (<><p><CircularProgress/>Patience please, your comment is being added...</p></>)
 }}
 
 return (

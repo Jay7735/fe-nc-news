@@ -2,6 +2,7 @@ import {getComments} from './utils/ApiFunctions'
 import {React, useState, useEffect} from 'react'
 import AddComment from './AddComment'
 import "./styles/articles.css"
+import CircularProgress from '@mui/material/CircularProgress'
 
 const Comments = ({article_id}) => {
  const [comments, setComments] = useState([])
@@ -13,7 +14,7 @@ const Comments = ({article_id}) => {
     }).then(()=>setIsLoading(false))
     }, [article_id])
     {if (isLoading===true){
-        return <p>Comments loading, please wait...</p>
+        return (<><CircularProgress /><p>Comments loading, please wait...</p></>)
     }}
 return (
 <>

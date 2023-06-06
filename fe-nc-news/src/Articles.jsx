@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Topics from './Topics.jsx'
 import Button from '@mui/material/Button'
 import ReadMore from '@mui/icons-material/ReadMore'
+import LinearProgress from '@mui/material/LinearProgress'
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
@@ -18,7 +19,10 @@ const Articles = () => {
     }, [])
     
     {if (isLoading===true){
-        return <p>Loading, please wait</p>
+        return (<>
+        <p>Loading, please wait</p>
+        <LinearProgress />
+        </>)
     }}
     return (
     <>

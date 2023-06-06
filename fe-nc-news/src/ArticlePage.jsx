@@ -5,6 +5,7 @@ import {getArticle} from './utils/ApiFunctions';
 import './styles/articlePage.css'
 import Comments from './Comments.jsx'
 import Votes from './Votes.jsx'
+import LinearProgress from '@mui/material/LinearProgress'
 
 
 const ArticlePage = () => {
@@ -22,7 +23,7 @@ const ArticlePage = () => {
   }, [article_id]);
 
   if (isLoading) {
-    return <p>Loading article, please wait...</p>;
+    return (<><p>Loading article, please wait...</p><LinearProgress/></>);
   }
 
   return (

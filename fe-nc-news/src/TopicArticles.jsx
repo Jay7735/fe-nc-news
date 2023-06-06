@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import {getArticlesByTopic} from './utils/ApiFunctions'; 
 import { Link } from 'react-router-dom';
 import './styles/articlePage.css'
+import LinearProgress from '@mui/material/LinearProgress'
 
 const TopicArticles = () => {
 
@@ -20,7 +21,8 @@ useEffect(() => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading your articles by topic, please wait...</p>;
+    return (<><p>Loading your articles by topic, please wait...</p>
+    <LinearProgress/></>);
   }
 return (
     <>
