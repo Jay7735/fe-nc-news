@@ -14,7 +14,6 @@ function App() {
       <p className="read-the-docs">
         The only social news website you will need.
       </p>
-      <BrowserRouter>
       <div className="buttonZone">
           <Link to='/articles'>
             <Button
@@ -31,7 +30,6 @@ function App() {
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route path="/:topic/articles" element={<TopicArticles />}/>
         </Routes>
-        </BrowserRouter>
         </div>
     </>
   )

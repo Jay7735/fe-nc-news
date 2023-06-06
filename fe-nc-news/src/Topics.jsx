@@ -17,12 +17,12 @@ const Topics = () => {
     }, [])
 
 return (
-    <ButtonGroup variant="outlined\q">
+    <ButtonGroup variant="contained">
     {topics.map((topic)=>{
         return (
-            <Link to={`/${topic.slug}/articles`} key={topic.slug}>
-            <Button endIcon={<Article/>}>{topic.slug}</Button>
-            </Link>
+            // <Link to={`/${topic.slug}/articles`} key={topic.slug}>
+            <Button component={Link} to={`/${topic.slug}/articles`} key={topic.slug} endIcon={<Article/>}>{topic.slug}</Button>
+            // </Link>
         )
     })}
     </ButtonGroup>

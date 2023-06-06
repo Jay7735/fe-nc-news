@@ -4,6 +4,8 @@ import {useState, useEffect} from 'react'
 import "./styles/articles.css"
 import { Link } from 'react-router-dom';
 import Topics from './Topics.jsx'
+import Button from '@mui/material/Button'
+import ReadMore from '@mui/icons-material/ReadMore'
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
@@ -32,7 +34,8 @@ const Articles = () => {
                     <p>Author: {article.author}</p>
                     <p>Comment Count: {article.comment_count}</p>
                     <div className="navigateAway">
-                    <Link to={`/articles/${article.article_id}`}>Click to read more!</Link>
+                        <Button component={Link} to={`/articles/${article.article_id}`} variant="contained" endIcon={<ReadMore/>} color="secondary">Read more</Button>
+                    {/* <Link to={`/articles/${article.article_id}`}>Click to read more!</Link> */}
                     </div> 
                     </div>
                 </div>
