@@ -5,7 +5,7 @@ import ArticlePage from './ArticlePage'
 import TopicArticles from './TopicArticles'
 import Button from '@mui/material/Button'
 import Newspaper from '@mui/icons-material/Newspaper'
-// import HomePage from './HomePage'
+import HomePage from './HomePage'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         </div>
         
         <Routes>
-          {/* <Route path="" element={<HomePage />} /> */}
+          <Route path="" element={<HomePage />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route path="/:topic/articles" element={<TopicArticles />}/>
