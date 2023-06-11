@@ -25,7 +25,7 @@ return (
 <Grid container justify="center" alignItems="center" direction="row" sx={{ width: '100%' }}>
 
 <Grid item xs={12}>
-    <Card>
+    <Card sx={{margin: 2}}>
     <AddComment article_id={article_id} setComments={setComments} />
 
     </Card>

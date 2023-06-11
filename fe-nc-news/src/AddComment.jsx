@@ -37,7 +37,7 @@ const handleSubmit = (event) => {
 
 return (
     <>
-    <form onSubmit={handleSubmit} style={{padding: '16px'}}>
+    <form onSubmit={handleSubmit} style={{padding: '10px'}}>
 
     <TextField
           label="Username"
