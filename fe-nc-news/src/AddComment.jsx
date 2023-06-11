@@ -2,6 +2,8 @@ import {React, useState, useEffect} from 'react'
 import { postComment } from "./utils/ApiFunctions";
 
 import CircularProgress from '@mui/material/CircularProgress'
+import { Button } from '@mui/material';
+import Publish from '@mui/icons-material/Publish'
 
 const AddComment = ({article_id, setComments}) => {
 const [formData, setFormData] = useState({})
@@ -41,7 +43,7 @@ return (
         <label>Your comment:
             <input type="text" value={commentBody} onChange={(event)=> setCommentBody(event.target.value)} required />
         </label>
-        <button>Submit</button>
+        <button color="primary" variant="outlined" endIcon={<Publish />}>Submit</button>
     </form>   
     </>
 )

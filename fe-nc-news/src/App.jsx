@@ -11,7 +11,6 @@ import Container from '@mui/material/Container'
 function App() {
   return (
     <>
-    {/* <Container style={{ background: '#f2f6fc' }}> */}
       <h1>NC News</h1>
       <p className="read-the-docs">
         The only social news website you will need.
@@ -33,7 +32,6 @@ function App() {
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route path="/:topic/articles" element={<TopicArticles />}/>
         </Routes>
-        {/* </Container>     */}
     </>
   )
 }

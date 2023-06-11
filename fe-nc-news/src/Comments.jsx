@@ -1,6 +1,7 @@
 import {getComments} from './utils/ApiFunctions'
 import {React, useState, useEffect} from 'react'
 import AddComment from './AddComment'
+import {Card, CardContent, CardMedia, Grid, CardHeader, Container, Typography} from '@mui/material'
 
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -19,24 +20,41 @@ const Comments = ({article_id}) => {
 return (
 <>
 <h3>Comments</h3>
+
+<Grid container justify="center" alignItems="center" direction="row" sx={{ width: '100%' }}>
+<Typography>
+    Comment section
+</Typography>
+<Grid item item xs={12}>
 <AddComment article_id={article_id} setComments={setComments} />
-    <div className="commentGrid">
-    {comments.length > 0 ?(
+</Grid>
+{comments.length > 0 ?(
     
     comments.map((comment)=>{
         return (
-            <div className="commentCard" key={comment.comment_id}>
-                <p>{comment.body}</p>
-                <div className="authorVotes">
-                <p>Author: {comment.author}</p>
-                <p>Votes: {comment.votes}</p>
-                </div>
-            </div>
+            <Grid item xs={12} key={comment.comment_id}  key={comment.comment_id}>
+                <Card sx={{ margin:2}}>
+                    <CardHeader
+                    title={comment.author}
+                    />
+                    <CardContent>
+                        <Typography>
+                        {comment.body}
+                        </Typography>
+                        <Typography>
+                        Author: {comment.author}
+                        </Typography>
+                        <Typography>
+                        Votes: {comment.votes}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Grid>
         )
     })): (
         <p>There are no comments for this article yet.</p>
     )}
-</div>
+</Grid>
 </>
 )
 }

@@ -8,19 +8,13 @@ import CardActions from '@mui/material/CardActions';
 const ArticleList = ({articles}) => {
 return (
     <>
-
-
-{/* <Container sx={{ bgcolor: red[500]}} > */}
     <Grid container justify="center" alignItems="center" direction="row" sx={{ width: '100%' }}>
     {articles.map((article)=>{
             return(    
                 <Grid item sm={12} md={6} xl={4} key={article.article_id}>
-
-
 <Card sx={{ margin:2, height: 450}}>
       <CardHeader
         title={article.title}
-        
       />
       <CardMedia
         component="img"
@@ -44,7 +38,6 @@ return (
             )
         })}
     </Grid>
-    {/* </Container> */}
     </>
 )
 }
