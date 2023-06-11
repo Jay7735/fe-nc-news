@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import {getArticlesByTopic} from './utils/ApiFunctions'; 
-import './styles/articlePage.css'
+
 import LinearProgress from '@mui/material/LinearProgress'
 import ArticleList from './ArticleList';
 

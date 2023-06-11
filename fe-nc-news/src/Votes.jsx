@@ -4,6 +4,7 @@ import ButtonGroup from '@mui/material/ButtonGroup'
 import Button from '@mui/material/Button'
 import ThumbUp from '@mui/icons-material/ThumbUp'
 import ThumbDown from '@mui/icons-material/ThumbDown'
+import { Box } from '@mui/material'
 
 const Votes = ({article_id, votes}) => {
     const [userVote, setUserVote] = useState(0)
@@ -19,11 +20,14 @@ patchVotes(article_id, -1)
 }
     return (
     <>
-    <li>Votes: {votes + userVote}</li>
+  
+    <Box sx={{ mb: 1, display: 'flex', flexDirection: 'column'}}>
+       <span>Votes: {votes + userVote}</span> 
     <ButtonGroup variant="contained">
     <Button onClick={() => upVote()} endIcon={<ThumbUp/>}>UP</Button>
     <Button onClick={() => downVote()} endIcon={<ThumbDown/>}>DOWN</Button>
     </ButtonGroup>
+    </Box>
     </>
 )
 }
