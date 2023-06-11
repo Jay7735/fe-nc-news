@@ -1,7 +1,6 @@
 import {getArticles} from "./utils/ApiFunctions";
 import React from 'react'
 import {useState, useEffect} from 'react'
-
 import Topics from './Topics.jsx'
 import LinearProgress from '@mui/material/LinearProgress'
 import ArticleList from './ArticleList'
@@ -25,7 +24,7 @@ const Articles = () => {
     return (
     <>
    <Topics />
-    <h2>Articles:</h2>
+    <h2>articles</h2>
     <ArticleList articles={articles} />
     </>
 )

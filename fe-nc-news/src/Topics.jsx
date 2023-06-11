@@ -1,9 +1,8 @@
 import { getTopics } from "./utils/ApiFunctions";
 import {React, useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import ButtonGroup from '@mui/material/ButtonGroup'
-import Button from '@mui/material/Button'
-import Article from '@mui/icons-material/Article'
+import { ButtonGroup, Button } from "@mui/material";
+import { Article } from "@mui/icons-material";
 
 const Topics = () => {
     const [topics, setTopics] = useState([])
@@ -24,10 +23,7 @@ return (
         )
     })}
     </ButtonGroup>
-
 )
-
-
 }
 
 export default Topics;

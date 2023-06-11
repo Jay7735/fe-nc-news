@@ -4,20 +4,7 @@ import { useParams } from 'react-router-dom';
 import {getArticle} from './utils/ApiFunctions'; 
 import Comments from './Comments.jsx'
 import Votes from './Votes.jsx'
-import LinearProgress from '@mui/material/LinearProgress'
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-
-
-
+import { LinearProgress, Card, CardHeader, CardMedia, CardContent, CardActions, Container, Typography  } from '@mui/material';
 
 const ArticlePage = () => {
   const { article_id } = useParams(); 

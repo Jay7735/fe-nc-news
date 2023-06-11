@@ -6,7 +6,7 @@ import TopicArticles from './TopicArticles'
 import Button from '@mui/material/Button'
 import Newspaper from '@mui/icons-material/Newspaper'
 import HomePage from './HomePage'
-import Container from '@mui/material/Container'
+import HomeIcon from '@mui/icons-material/Home';
 
 function App() {
   return (
@@ -23,6 +23,14 @@ function App() {
             variant="contained"
             color='secondary'
              >Articles</Button>
+          </Link>
+          <Link to='/'>
+            <Button
+            endIcon={<HomeIcon/>}
+            size='medium'
+            variant="contained"
+            color='secondary'
+             >Home</Button>
           </Link>
         </div>
         

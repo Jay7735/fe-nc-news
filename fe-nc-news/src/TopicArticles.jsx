@@ -26,7 +26,7 @@ useEffect(() => {
   }
 return (
     <>
-    <h2>{topic} Articles</h2>
+    <h2>{topic} articles</h2>
     <ArticleList articles={articles} />
     </>
 )
