@@ -1,7 +1,7 @@
 import {getComments} from './utils/ApiFunctions'
 import {React, useState, useEffect} from 'react'
 import AddComment from './AddComment'
-import {Card, CardContent, CardMedia, Grid, CardHeader, Container, Typography} from '@mui/material'
+import {Card, CardContent, CardMedia, Grid, CardHeader, Container, Typography, CardActions} from '@mui/material'
 
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -19,21 +19,24 @@ const Comments = ({article_id}) => {
     }}
 return (
 <>
-<h3>Comments</h3>
-
-<Grid container justify="center" alignItems="center" direction="row" sx={{ width: '100%' }}>
-<Typography>
+<Typography variant="h4" align="center" gutterBottom>
     Comment section
 </Typography>
-<Grid item item xs={12}>
-<AddComment article_id={article_id} setComments={setComments} />
+<Grid container justify="center" alignItems="center" direction="row" sx={{ width: '100%' }}>
+
+<Grid item xs={12}>
+    <Card>
+    <AddComment article_id={article_id} setComments={setComments} />
+
+    </Card>
+
 </Grid>
 {comments.length > 0 ?(
     
     comments.map((comment)=>{
         return (
-            <Grid item xs={12} key={comment.comment_id}  key={comment.comment_id}>
-                <Card sx={{ margin:2}}>
+            <Grid item xs={12} key={comment.comment_id}  >
+                <Card sx={{ margin:2, backgroundColor: 'white' }}>
                     <CardHeader
                     title={comment.author}
                     />
@@ -41,13 +44,16 @@ return (
                         <Typography>
                         {comment.body}
                         </Typography>
-                        <Typography>
+                        <Typography variant='body2' color="text.secondary">
                         Author: {comment.author}
                         </Typography>
-                        <Typography>
+                        <Typography color="text.secondary">
                         Votes: {comment.votes}
                         </Typography>
                     </CardContent>
+                    <CardActions>
+                        
+                    </CardActions>
                 </Card>
             </Grid>
         )

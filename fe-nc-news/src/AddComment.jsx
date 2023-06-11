@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react'
 import { postComment } from "./utils/ApiFunctions";
 
 import CircularProgress from '@mui/material/CircularProgress'
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import Publish from '@mui/icons-material/Publish'
 
 const AddComment = ({article_id, setComments}) => {
@@ -37,13 +37,37 @@ const handleSubmit = (event) => {
 
 return (
     <>
-    <form onSubmit={handleSubmit}>
-        <label>Username: {commentAuthor}{' '}
+    <form onSubmit={handleSubmit} style={{padding: '16px'}}>
+
+    <TextField
+          label="Username"
+          value={commentAuthor}
+          onChange={(event) => setCommentAuthor(event.target.value)}
+          required
+          variant="outlined"
+          fullWidth
+        />
+
+<TextField
+          label="Your comment"
+          type="text"
+          value={commentBody}
+          onChange={(event) => setCommentBody(event.target.value)}
+          required
+          variant="outlined"
+          fullWidth
+          multiline
+          rows={4}
+        />
+
+        {/* <label>Username: {commentAuthor}{' '}
         </label>
         <label>Your comment:
-            <input type="text" value={commentBody} onChange={(event)=> setCommentBody(event.target.value)} required />
-        </label>
-        <button color="primary" variant="outlined" endIcon={<Publish />}>Submit</button>
+            <input type="text" value={commentBody} onChange={(event)=> setCommentBody(event.target.value)} required /> */}
+        {/* </label> */}
+
+        
+        <Button color="primary" type="submit" variant="outlined" endIcon={<Publish />}>Submit</Button>
     </form>   
     </>
 )
