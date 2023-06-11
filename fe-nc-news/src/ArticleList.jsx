@@ -2,7 +2,6 @@ import Button from '@mui/material/Button'
 import ReadMore from '@mui/icons-material/ReadMore'
 import React from 'react'
 import {Card, CardContent, CardMedia, Grid, CardHeader, Container} from '@mui/material'
-import { red } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
 

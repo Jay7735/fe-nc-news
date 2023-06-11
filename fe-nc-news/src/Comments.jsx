@@ -1,7 +1,7 @@
 import {getComments} from './utils/ApiFunctions'
 import {React, useState, useEffect} from 'react'
 import AddComment from './AddComment'
-import "./styles/articles.css"
+
 import CircularProgress from '@mui/material/CircularProgress'
 
 const Comments = ({article_id}) => {

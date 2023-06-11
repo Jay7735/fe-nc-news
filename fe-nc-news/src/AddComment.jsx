@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { postComment } from "./utils/ApiFunctions";
-import "./styles/articles.css"
+
 import CircularProgress from '@mui/material/CircularProgress'
 
 const AddComment = ({article_id, setComments}) => {

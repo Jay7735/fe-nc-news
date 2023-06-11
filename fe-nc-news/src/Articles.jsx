@@ -1,7 +1,7 @@
 import {getArticles} from "./utils/ApiFunctions";
 import React from 'react'
 import {useState, useEffect} from 'react'
-import "./styles/articles.css"
+
 import Topics from './Topics.jsx'
 import LinearProgress from '@mui/material/LinearProgress'
 import ArticleList from './ArticleList'
