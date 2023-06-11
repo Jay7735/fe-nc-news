@@ -14,7 +14,7 @@ const Topics = () => {
     }, [])
 
 return (
-    <ButtonGroup variant="contained">
+    <ButtonGroup variant="contained" sx={{margin: 3}}>
     {topics.map((topic)=>{
         return (
             // <Link to={`/${topic.slug}/articles`} key={topic.slug}>
