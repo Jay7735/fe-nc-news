@@ -7,15 +7,17 @@ import Button from '@mui/material/Button'
 import Newspaper from '@mui/icons-material/Newspaper'
 import HomePage from './HomePage'
 import HomeIcon from '@mui/icons-material/Home';
+import { Box } from '@mui/material'
 
 function App() {
   return (
     <>
+    
       <h1>NC News</h1>
-      <p className="read-the-docs">
+      <p>
         The only social news website you will need.
       </p>
-      <div className="buttonZone">
+      <div sx={{margin: 2}}>
           <Link to='/articles'>
             <Button
             endIcon={<Newspaper/>}
@@ -40,6 +42,7 @@ function App() {
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route path="/:topic/articles" element={<TopicArticles />}/>
         </Routes>
+        
     </>
   )
 }

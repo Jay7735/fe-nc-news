@@ -24,7 +24,7 @@ const Articles = () => {
     return (
     <>
    <Topics />
-    <h2>articles</h2>
+    <h2>All articles</h2>
     <ArticleList articles={articles} />
     </>
 )

@@ -26,7 +26,7 @@ useEffect(() => {
   }
 return (
     <>
-    <h2>{topic} articles</h2>
+    <h2>{topic.charAt(0).toUpperCase() + topic.slice(1)} articles</h2>
     <ArticleList articles={articles} />
     </>
 )
