@@ -7,33 +7,37 @@ import Button from '@mui/material/Button'
 import Newspaper from '@mui/icons-material/Newspaper'
 import HomePage from './HomePage'
 import HomeIcon from '@mui/icons-material/Home';
-import { Box } from '@mui/material'
+import theme from './Theme'
+import { ThemeProvider } from '@mui/material'
+
+
 
 function App() {
   return (
     <>
-    
+    <ThemeProvider theme={theme}>
       <h1>NC News</h1>
       <p>
         The only social news website you will need.
       </p>
       <div sx={{margin: 2}}>
-          <Link to='/articles'>
-            <Button
+          
+            <Button component={Link}
+            to='/articles'
             endIcon={<Newspaper/>}
             size='medium'
             variant="contained"
             color='secondary'
              >Articles</Button>
-          </Link>
-          <Link to='/'>
+          
             <Button
+            component={Link}
+            to='/'
             endIcon={<HomeIcon/>}
             size='medium'
             variant="contained"
             color='secondary'
              >Home</Button>
-          </Link>
         </div>
         
         <Routes>
@@ -42,7 +46,7 @@ function App() {
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route path="/:topic/articles" element={<TopicArticles />}/>
         </Routes>
-        
+        </ThemeProvider>
     </>
   )
 }

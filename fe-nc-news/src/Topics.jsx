@@ -17,9 +17,9 @@ return (
     <ButtonGroup variant="contained" sx={{margin: 3}}>
     {topics.map((topic)=>{
         return (
-            // <Link to={`/${topic.slug}/articles`} key={topic.slug}>
+           
             <Button component={Link} to={`/${topic.slug}/articles`} key={topic.slug} endIcon={<Article/>}>{topic.slug}</Button>
-            // </Link>
+           
         )
     })}
     </ButtonGroup>

@@ -59,15 +59,7 @@ return (
           multiline
           rows={4}
         />
-
-        {/* <label>Username: {commentAuthor}{' '}
-        </label>
-        <label>Your comment:
-            <input type="text" value={commentBody} onChange={(event)=> setCommentBody(event.target.value)} required /> */}
-        {/* </label> */}
-
-        
-        <Button color="primary" type="submit" variant="outlined" endIcon={<Publish />}>Submit</Button>
+        <Button color="primary" type="submit" variant="contained" endIcon={<Publish />}>Submit</Button>
     </form>   
     </>
 )
