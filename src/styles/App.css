@@ -17,7 +17,7 @@ h1, h2, h3, h4, p {
 }
 @media (max-width: 768px) {
   #root {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 }
 
