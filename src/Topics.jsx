@@ -14,7 +14,7 @@ const Topics = () => {
     }, [])
 
 return (
-    <ButtonGroup variant="contained" sx={{margin: 3}}>
+    <ButtonGroup variant="contained" sx={{margin: 3, justifyContent: 'center'}}>
     {topics.map((topic)=>{
         return (
            
