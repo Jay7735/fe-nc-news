@@ -28,6 +28,7 @@ function App() {
             size='medium'
             variant="contained"
             color='secondary'
+            sx={{margin: 0.5}}
              >Articles</Button>
           
             <Button
