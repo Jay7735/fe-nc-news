@@ -18,7 +18,7 @@ return (
     {topics.map((topic)=>{
         return (
            
-            <Button component={Link} to={`/${topic.slug}/articles`} key={topic.slug} endIcon={<Article/>}>{topic.slug}</Button>
+            <Button size='small'component={Link} to={`/${topic.slug}/articles`}  key={topic.slug} endIcon={<Article/>}>{topic.slug}</Button>
            
         )
     })}
