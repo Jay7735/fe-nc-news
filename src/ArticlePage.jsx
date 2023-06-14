@@ -35,7 +35,7 @@ const ArticlePage = () => {
     
     }}>
 {article && (
-<Card sx={{ width: '80vw', mx: 'auto', margin: 2 }}>
+<Card sx={{ width: '95%',maxWidth: '80vw', mx: 'auto', margin: 2 }}>
       <CardHeader
        
         title={article.title}
