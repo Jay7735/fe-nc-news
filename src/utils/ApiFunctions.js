@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getArticles = () => {
   return axios
-    .get("https://jd-nc-news.onrender.com/api/articles")
+    .get("https://jd-news-api.onrender.com/api/articles")
     .then((response) => {
       return response.data.articles;
     })
@@ -11,7 +11,7 @@ export const getArticles = () => {
 
 export const getArticle = (article_id) => {
   return axios
-    .get(`https://jd-nc-news.onrender.com/api/articles/${article_id}`)
+    .get(`https://jd-news-api.onrender.com/api/articles/${article_id}`)
     .then((response) => {
       return response.data.article;
     })
@@ -20,7 +20,7 @@ export const getArticle = (article_id) => {
 
 export const getComments = (article_id) => {
   return axios
-    .get(`https://jd-nc-news.onrender.com/api/articles/${article_id}/comments`)
+    .get(`https://jd-news-api.onrender.com/api/articles/${article_id}/comments`)
     .then((response) => {
       return response.data.comments;
     });
@@ -28,7 +28,7 @@ export const getComments = (article_id) => {
 
 export const patchVotes = (article_id, upDownVote) => {
   return axios
-    .patch(`https://jd-nc-news.onrender.com/api/articles/${article_id}`, {
+    .patch(`https://jd-news-api.onrender.com/api/articles/${article_id}`, {
       inc_votes: upDownVote,
     })
     .then((response) => {
@@ -46,7 +46,7 @@ export const patchVotes = (article_id, upDownVote) => {
 export const postComment = (formData, article_id) => {
   return axios
     .post(
-      `https://jd-nc-news.onrender.com/api/articles/${article_id}/comments`,
+      `https://jd-news-api.onrender.com/api/articles/${article_id}/comments`,
       formData
     )
     .then((response) => {
@@ -57,7 +57,7 @@ export const postComment = (formData, article_id) => {
 
 export const getTopics = () => {
   return axios
-    .get(`https://jd-nc-news.onrender.com/api/topics`)
+    .get(`https://jd-news-api.onrender.com/api/topics`)
     .then((response) => {
       return response.data.topics
     }).catch((err) => console.log(err));
@@ -65,7 +65,7 @@ export const getTopics = () => {
 
 export const getArticlesByTopic = (topic) => {
   return axios
-    .get(`https://jd-nc-news.onrender.com/api/${topic}/articles`)
+    .get(`https://jd-news-api.onrender.com/api/${topic}/articles`)
     .then((response) => {
     return response.data.articles
     }).catch((err) => console.log(err));
