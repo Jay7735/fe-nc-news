@@ -1,4 +1,4 @@
-import './styles/App.css'
+import './styles/index.css'
 import Articles from './Articles'
 import {Routes, Route, Link} from "react-router-dom"
 import ArticlePage from './ArticlePage'
