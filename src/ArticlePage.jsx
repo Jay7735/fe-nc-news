@@ -32,10 +32,11 @@ const ArticlePage = () => {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      width: '100%'
     
     }}>
 {article && (
-<Card sx={{ width: '95%',maxWidth: { xs: '100%', sm: '80vw' }, mx: 'auto', margin: 2 }}>
+<Card sx={{ maxWidth: { xs: '100%', sm: '80vw' }, mx: 'auto', marginTop: 2, padding: 0 }}>
       <CardHeader
        
         title={article.title}
