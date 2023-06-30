@@ -3,12 +3,10 @@ import Articles from './Articles'
 import {Routes, Route, Link} from "react-router-dom"
 import ArticlePage from './ArticlePage'
 import TopicArticles from './TopicArticles'
-import Button from '@mui/material/Button'
-import Newspaper from '@mui/icons-material/Newspaper'
 import HomePage from './HomePage'
-import HomeIcon from '@mui/icons-material/Home';
 import theme from './Theme'
 import { ThemeProvider } from '@mui/material'
+import { Navbar } from './NavBar'
 
 
 
@@ -16,13 +14,10 @@ function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
-      <h1>NC News</h1>
-      <p>
-        The only social news website you will need.
-      </p>
+      <Navbar/>
       <div sx={{margin: 2}}>
           
-            <Button component={Link}
+            {/* <Button component={Link}
             to='/articles'
             endIcon={<Newspaper/>}
             size='medium'
@@ -38,7 +33,7 @@ function App() {
             size='medium'
             variant="contained"
             color='secondary'
-             >Home</Button>
+             >Home</Button> */}
         </div>
         
         <Routes>
