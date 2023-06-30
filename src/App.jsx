@@ -6,7 +6,7 @@ import TopicArticles from './TopicArticles'
 import HomePage from './HomePage'
 import theme from './Theme'
 import { ThemeProvider } from '@mui/material'
-import { Navbar } from './NavBar'
+import { Navbar } from './Navbar'
 
 
 
